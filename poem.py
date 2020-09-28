@@ -1,4 +1,5 @@
 import random
+from googletrans import Translator
 
 #gets the lines and puts them in a list
 def get_file_lines(file_name):
@@ -39,11 +40,24 @@ def lines_printed_random(file_name):
   return poem_list_random 
 
 
+# print poem customly
+def lines_printed_custom(file_name):
+  poem_list = get_file_lines('poem.txt')
+  poem_list_custom = ''
+  
+  for lines in poem_list:
+    new_line = lines
+    translator = Translator()
+    translated_sentence = translator.translate(new_line, src='en', dest='es')
+    print(translated_sentence.text)
 
+  return poem_list_custom
 
 
 print(get_file_lines('poem.txt'))
-print('\n')
+print('\nPoem printed backwards')
 print(lines_printed_backwards('poem.txt'))
-print('\n')
+print('\nPoem printed randomly')
 print(lines_printed_random('poem.txt'))
+print('\nPoem printed customly')
+print(lines_printed_custom('poem.txt'))
