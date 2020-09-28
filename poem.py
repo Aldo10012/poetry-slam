@@ -54,10 +54,19 @@ def lines_printed_custom(file_name):
   return poem_list_custom
 
 
-print(get_file_lines('poem.txt'))
-print('\nPoem printed backwards')
-print(lines_printed_backwards('poem.txt'))
-print('\nPoem printed randomly')
-print(lines_printed_random('poem.txt'))
-print('\nPoem printed customly')
-print(lines_printed_custom('poem.txt'))
+# print user's option
+def print_users_option():
+  prompt = input('Would you like the star spangled banner printed backwards, randomly, or customly: ')
+  print(prompt)
+  
+  if prompt == 'backwards' or prompt == 'Backwards':
+    print(lines_printed_backwards('poem.txt'))
+  elif prompt == 'randomly' or prompt == 'Randomly':
+    print(lines_printed_random('poem.txt'))
+  elif prompt == 'customly' or prompt == 'Customly':
+    print(lines_printed_custom('poem.txt'))
+  else:
+    print('Can you repeate that')
+
+
+print_users_option()
