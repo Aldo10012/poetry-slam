@@ -34,8 +34,9 @@ def lines_printed_random(file_name):
 
   i = 0
   while i < len(poem_list):
+    line_num = str(i + 1)
     new_line = random.choice(poem_list)
-    poem_list_random += new_line
+    poem_list_random += line_num + ') ' + new_line
     i += 1
 
   return poem_list_random 
@@ -46,11 +47,13 @@ def lines_printed_custom(file_name):
   poem_list = get_file_lines('poem.txt')
   poem_list_custom = ''
   
+  line_num = 1
   for lines in poem_list:
     new_line = lines
     translator = Translator()
     translated_sentence = translator.translate(new_line, src='en', dest='es')
-    print(translated_sentence.text)
+    print(str(line_num) + ') ' + str(translated_sentence.text))
+    line_num += 1
 
   return poem_list_custom
 
