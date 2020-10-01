@@ -34,9 +34,11 @@ def lines_printed_random(file_name):
 
   i = 0
   while i < len(poem_list):
-    line_num = str(i + 1)
-    new_line = random.choice(poem_list)
-    poem_list_random += line_num + ') ' + new_line
+    temp_list = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]
+    temp_index = random.choice(temp_list) 
+    line_num = temp_index - 1
+    new_line = poem_list[line_num - 1]
+    poem_list_random += str(line_num) + ') ' + str(new_line)
     i += 1
 
   return poem_list_random 
