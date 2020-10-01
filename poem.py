@@ -19,8 +19,9 @@ def lines_printed_backwards(file_name):
   
   i = len(poem_list)-1
   while i > -1:
+    line_num = str(i + 1)
     new_line = poem_list[i]
-    poem_list_bakcwards += new_line
+    poem_list_bakcwards += line_num + ') ' + new_line
     i -= 1
 
   return poem_list_bakcwards 
